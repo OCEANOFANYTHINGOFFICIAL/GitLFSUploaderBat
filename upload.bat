@@ -5,6 +5,7 @@ set /p dir=Give Location Of Uploading Directory:
 echo.
 echo Uploading Directory:  %dir%
 echo.
+cd %dir%
 set /p opti=add README.md ?: 
 if %opti% == yes goto opt-yes
 if %opti% == no goto oth
@@ -33,7 +34,6 @@ echo.
 echo Remote Url:  %remurl%
 echo.
 set /p branch=Set Your Git Branch: 
-cd %dir%
 git init
 git lfs track "%ext%"
 git add .gitattributes
